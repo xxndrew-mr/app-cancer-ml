@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.galleryButton.setOnClickListener { startGallery() }
-        binding.analyzeButton.setOnClickListener {
+        binding.analyzezButton.setOnClickListener {
             currentImageUri?.let {
                 analyzeImage()
             } ?: run {
@@ -54,6 +54,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
     private fun analyzeImage() {
         binding.progressIndicator.visibility = View.VISIBLE
         val intent = Intent(this, ResultActivity::class.java)
@@ -61,7 +65,4 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
 }

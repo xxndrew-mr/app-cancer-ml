@@ -30,6 +30,19 @@ class ResultActivity : AppCompatActivity(), ImageClassifierHelper.ClassifierList
         }
     }
 
+    override fun onError(error: String) {
+        showToast(error)
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    companion object {
+        const val EXTRA_IMAGE_URI = "extra_image_uri"
+
+    }
+
     override fun onResults(results: List<Classifications>?, inferenceTime: Long) {
         results?.let {
             val topResult = it.firstOrNull()
@@ -53,20 +66,5 @@ class ResultActivity : AppCompatActivity(), ImageClassifierHelper.ClassifierList
                 }
             }
         }
-    }
-
-
-
-    override fun onError(error: String) {
-        showToast(error)
-    }
-
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
-
-    companion object {
-        const val EXTRA_IMAGE_URI = "extra_image_uri"
-
     }
 }
