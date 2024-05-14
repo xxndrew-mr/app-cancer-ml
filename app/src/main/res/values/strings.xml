@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Asclepius</string>
+    <string name="camera_x">Kamera X-Ray</string>
+    <string name="camera">Kamera</string>
+    <string name="gallery">Galery</string>
+    <string name="analyzez">Analyzez</string>
+    <string name="result">Hasilnya Dibawah Ini.</string>
+    <string name="image_classifier_failed">Foto Tidak Bisa Di Analis</string>
+    <string name="empty_image_warning">masukkan gambarnya </string>
+    <string name="no_text_recognized">Tidak Ada Teks!</string>
+</resources>
